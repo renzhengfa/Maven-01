@@ -5,6 +5,9 @@ import org.springframework.stereotype.Component;
 import java.io.Serializable;
 import java.util.Objects;
 
+/**
+用户实体类
+*/
 @Component
 public class Act_id_user implements Serializable {
 
