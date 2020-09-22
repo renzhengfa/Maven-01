@@ -1,0 +1,58 @@
+# 惠州市建鑫工程造价事务所有限公司
+server:
+  port: 8080
+  servlet:
+    # 系统跟路径
+    context-path: /
+
+spring:
+#  mvc:
+#    view:
+#      prefix: /
+#      suffix: .html
+  # 配置数据源
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://127.0.0.1:3306/db_kuiniu?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+  # 配置thymeleaf模板引擎
+  thymeleaf:
+    # 禁用thymeleaf模板引擎的缓存
+    cache: false
+    prefix: "classpath:/static/"
+    suffix: ".html"
+  profiles:
+    active:
+
+logging:
+  pattern:
+    console: "%d - %msg%n" #     定义打印的日志格式
+  #    dateformat: #设置日志日期格式
+  #    file: #定义输出到日志文件的日志格式
+  #  config: #日志配置文件的位置。例如，classpath:logback.xml。
+  #file: E:/sell/sell.log #设置保存日志的日志文件
+  file: /var/lib/jenkins/workspace/sell/sell.log
+  #    max-history:
+  #    max-size: #设置日志文件最大大小 #设置日志等级
+  #  path: / #日志文件的位置，例如/var/log
+  register-shutdown-hook: false #当初始化日志系统时，为其注册一个关闭钩子。
+  level:
+    com.kn: DEBUG
+  root: INFO
+
+---
+
+server:
+  port: 8081
+spring:
+  profiles: test
+
+---
+
+server:
+  port: 8082
+spring:
+  profiles: prod
