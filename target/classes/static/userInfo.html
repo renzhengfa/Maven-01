@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>个人信息</title>
+    <link rel="stylesheet" href="../css/demo.css" />
+    <link rel="stylesheet" href="../css/login.css"/>
+    <link rel="stylesheet" href="../css/index.css"/>
+    <script type="text/javascript" src="../js/jquery1.42.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.SuperSlide.js"></script>
+    <script type="text/javascript" src="../js/Validform_v5.3.2.js"></script>
+    <script type="text/javascript" src="../js/login.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <a href="#">
+                <img src="../img/indexImgs/Logo.jpg" width="300px" height="100px" />
+            </a>
+        </div>
+        <div class="login-registor">
+            <ul class="lg">
+                <li class="login">
+                    <span> <strong>个人信息页面</strong></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="user_info" th:object="${session.LOGIN_USERINFO}">
+        <table style="width: 100%; text-align: center;">
+            <tr>
+                <td>ID_</td>
+                <td>REV_</td>
+                <td>FIRST_</td>
+                <td>LAST_</td>
+                <td>EMAIL_</td>
+                <td>PWD_</td>
+                <td>PICTURE_ID_</td>
+                <td>操作</td>
+            </tr>
+            <tr>
+                <td th:text="*{ID_}">ID_</td>
+                <td th:text="*{REV_}">REV_</td>
+                <td th:text="*{FIRST_}">FIRST_</td>
+                <td th:text="*{LAST_}">LAST_</td>
+                <td th:text="*{EMAIL_}">EMAIL_</td>
+                <td th:text="*{PWD_}">PWD_</td>
+                <td th:text="*{PICTURE_ID_}">PICTURE_ID_</td>
+                <td><a href="#"> 操作 </a></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

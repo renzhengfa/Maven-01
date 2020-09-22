@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Role Manager</title>
+</head>
+<body>
+<div class="header"></div>
+<div class="body">
+    <table style="text-align: center; width: 100%;">
+        <tr>
+            <td>id</td>
+            <td>role_name</td>
+            <td>role_code</td>
+            <td>is_default</td>
+            <td>create_time</td>
+            <td>update_time</td>
+            <td>disabled</td>
+            <td>操作</td>
+        </tr>
+        <tr th:each="role : ${AuthTbRoles}">
+            <td th:text="*{role.id}">id</td>
+            <td th:text="*{role.role_name}">role_name</td>
+            <td th:text="*{role.role_code}">role_code</td>
+            <td th:text="*{role.is_default}">is_default</td>
+            <td th:text="*{role.create_time}">create_time</td>
+            <td th:text="*{role.update_time}">update_time</td>
+            <td th:text="*{role.disabled}">disabled</td>
+            <td>
+                <a href="#">操作</a>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="footer"></div>
+
+
+</body>
+</html>
