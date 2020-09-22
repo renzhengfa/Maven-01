@@ -1,2 +1,0 @@
-
-测试GitHub hook trigger for GITScm polling是否成功提交
