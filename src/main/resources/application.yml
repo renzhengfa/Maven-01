@@ -1,6 +1,6 @@
 # 惠州市建鑫工程造价事务所有限公司
 server:
-  port: 8080
+  port: 8084
   servlet:
     # 系统跟路径
     context-path: /
